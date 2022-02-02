@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-family: sans-serif;
+            /* Change your font family */
+          }
+
+        .content-table {
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 0.9em;
+            min-width: 1000px;
+            border-radius: 5px 5px 0 0;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .content-table thead tr {
+            background-color: #009879;
+            color: #ffffff;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        .content-table th,
+        .content-table td {
+            padding: 12px 15px;
+        }
+
+        .content-table tbody tr {
+            border-bottom: 1px solid #dddddd;
+        }
+
+        .content-table tbody tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+        }
+
+        .content-table tbody tr:last-of-type {
+            border-bottom: 2px solid #009879;
+        }
+
+        .content-table tbody tr.active-row {
+            font-weight: bold;
+            color: #009879;
+        }
+        * {
+            margin: 0;
+            padding: 0
+        }
+
+        body {
+            font-family: sans-serif, Arial !important;
+            -webkit-transition: all 0.5s ease;
+            transition: all 0.5s ease;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: normal;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            line-height: 150%;
+            margin-bottom: 2em;
+        }
+
+        .fix {
+            overflow: hidden;
+        }
+
+        .container_full {
+            width: 100%;
+        }
+
+        .container {
+            width: 1280px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .bg_color {
+            background: #292929;
+        }
+
+        .logo {
+            float: left;
+        }
+
+        .logo h2 {
+            font-family: lato;
+            color: white;
+            font-weight: bold;
+            font-size: 40px;
+            padding-top: 20px;
+        }
+
+        header nav {
+            float: right;
+        }
+
+        header nav .menu {
+            list-style: none;
+        }
+
+        header nav .menu li {
+            float: left;
+            border-right: 1px solid #1D1D1D;
+        }
+
+        header nav .menu li:first-child {
+            border-left: 1px solid #1D1D1D;
+        }
+
+        header nav .menu li a {
+            color: white;
+            font-family: lato;
+            font-weight: bold;
+            font-size: 16px;
+            display: block;
+            padding: 50px 30px;
+            border-bottom: 5px solid #1E1E1E;
+        }
+
+        header nav .menu li a:hover {
+            border-bottom: 5px solid #6DD053;
+            color: #6DD053;
+        }
+
+        header nav .menu li.active a {
+            border-bottom: 5px solid #6DD053;
+            color: #6DD053;
+        }
+        .table_container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .table_container .content-table button{
+            padding: 7px;
+        }
+        .Transection{
+            text-align: center;
+            align-content: center;
+        }
+        .txtid{
+            text-align: center;
+            align-content: center; 
+        }
+        .txtid input{
+            width: 350px;
+            padding: 15px;
+            background-color: #e2e2e2;
+            border: none;
+            margin: 20px;
+        }
+        .btn{
+            text-align: center;
+            align-content: center;
+        }
+        .btn button{
+            width: 100px;
+            padding: 15px;
+            font:bold;
+            color: white;
+            font-size: large;
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    
+  
+
+    <div class="table_container">
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th>Customer Name</th>
+                    <th>Customer_id</th>
+                    <th>Phone</th>
+                    <th>Payment status</th>
+                    <th>Pay now</th>
+                </tr>
+            </thead>
+            <tbody>
+                    <tr>
+                        <td>
+                            <%= data.name %>
+                        </td>
+                        <td>
+                            <%= data._id %>
+                        </td>
+                        <td>
+                            <%= data.phone %>
+                        </td>
+                        <td>
+                            <%= data.address %>
+                        </td>
+                        <td>
+                           <a href="pay">Pay now</a>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="Transection"><h3>Complete your payment and enter the transection id</h3></div>
+    <form action=" " method="post">
+        <div class="txtid"><input class="txtid" name="transection_id" type="text" placeholder="Enter transection id"></div>
+        <input type="hidden" value="data._id" name="payment_id">
+        <input type="hidden" value="data.name" name="name">
+        <input type="hidden" value="data.phone" name="phone">
+        <input type="hidden" value="pending" name="payment_status">
+        <div class="btn"><button type="submit">Send</button></div>
+    </form>
+    
+</body>
+
+</html>

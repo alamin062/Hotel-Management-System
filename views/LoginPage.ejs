@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <style>
+           body{
+    margin: 0;
+    padding: 0;
+    font-family: montserrat;
+    background: linear-gradient(120deg,#2980b9,#8e44ad);
+    height: 100vh;
+    overflow: hidden;
+}
+.form_container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 400px;
+    background:white;
+    border-radius: 10px;
+}
+.form_container{
+    text-align: center;
+}
+.form_container h1{
+    padding-top: 20px;
+}
+.form_container form{
+    box-sizing: border-box;
+    
+}
+.email_field input{
+   border: none;
+   background-color: #E2E2E2;
+   padding: 15px;
+   margin: 10px;
+   width: 300px;
+   border-radius: 5px;
+}
+.btn{
+    width: 150px;
+    padding: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background-color: #18A0FB;
+    border:none;
+    border-radius: 20px;
+}
+       </style>
+    </head>
+    <body>
+        <div class="form_container">
+            <h1>Login</h1><br>
+            <form method="post" action="/login1">
+                <div class="email_field">
+                    <input type="text" placeholder="Username" name="username" required>
+                </div>
+                <div class="email_field">
+                    <input type="password" placeholder="Password" required name="password">
+                </div>
+                <input class="btn" type="submit" value="Login">
+                <div class="signup_page_link">
+                    Not a member? <a href="/signup">Sign up now</a>
+                </div><br><br>
+            </form>
+        </div>
+    </body>
+</html>

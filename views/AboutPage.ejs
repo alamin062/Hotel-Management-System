@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About | page</title>
+    <link rel="stylesheet" href="../styles/style.css" />
+    <style>
+        img {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+}
+.section--1 {
+  /* display: absolute; */
+  z-index: -1;
+}
+.wrapper-container {
+  /* position: fixed; */
+}
+.sec-1-hero-title {
+  background-color: #279eee;
+  /* display: block; */
+  padding-block-end: 0.5rem;
+  padding-block-start: 0.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: clamp(1.5rem, 10vw, 3rem);
+  color: rgb(0, 0, 0);
+}
+/* .flex {
+  flex-direction: column;
+} */
+.main--content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-block-start: 2rem;
+  margin-block-end: 2rem;
+  margin-inline-end: 2rem;
+  margin-inline-start: 2rem;
+  gap: 1rem;
+}
+.section-col-2 {
+  /* position: fixed; */
+  z-index: -1;
+  /* background-color: #aa55; */
+  /* padding: 1rem; */
+  /* border-radius: 1rem; */
+  /* display: flex; */
+  /* gap: 5rem; */
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.section-col-1 {
+  /* position: fixed; */
+  z-index: -1;
+  /* background-color: hsl(0 0% 100% / 0.3); */
+  /* backdrop-filter: blur(1rem); */
+  padding: 2rem;
+  border: 1px solid hsl(0 0% 100% / 0.5);
+  border-radius: 1rem;
+  /* width: max-content; */
+}
+.sec-1_img {
+  /* padding: .25em 1em; */
+  /* object-fit: cover; */
+
+  width: 60%;
+  border-radius: 1em;
+  border: 2px solid wheat;
+  transform: scale(0.9);
+  transition: transform 350ms ease-out;
+}
+.sec-1_img:hover {
+  transform: scale(1);
+}
+.sec1img {
+  /* min-width: 200px; */
+}
+
+@supports (backdrop-filter: blur(1rem)) {
+  .section-col-1 {
+    background-color: hsl(0 0% 100% / 0.3);
+    backdrop-filter: blur(1rem);
+  }
+  /* .section-col-2 {
+    background-color: hsl(0 0% 100% / 0.3);
+    backdrop-filter: blur(1rem);
+  } */
+}
+
+/* Footer Section of first Section */
+
+@media (min-width: 35rem) {
+  .grid {
+    /* grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "col-1 col-2";
+    justify-content: space-between;
+    max-height: 80%; */
+  }
+  .wrapper-container {
+    /* background-color: #fff444; */
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+  }
+  .main--content {
+    width: min(90%, 75rem);
+    display: grid;
+    /* align-items: center; */
+    justify-content: space-between;
+    /* flex-direction: row; */
+    grid-auto-flow: column;
+    max-width: 1140px;
+  }
+
+  .sec-1-image1,
+  .sec-1-image2 {
+    /* background-color: red; */
+    /* padding: 1rem; */
+    border-radius: 1rem;
+    min-width: 200px;
+    max-width: 250px;
+    /* width: 100%; */
+  }
+  .section-col-2 {
+    background-color: none;
+    border-radius: 1rem;
+    /* width: 35%; */
+    padding: 0;
+    z-index: -1;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    /* align-items: flex-start; */
+  }
+  .section-col-1 {
+    /* width: 55%; */
+    width: min(90%, 45rem);
+    min-width: 300px;
+    /* align-items: flex-start; */
+  }
+}
+* {
+            margin: 0;
+            padding: 0
+        }
+
+        body {
+            font-family: sans-serif, Arial !important;
+            -webkit-transition: all 0.5s ease;
+            transition: all 0.5s ease;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: normal;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            line-height: 150%;
+            margin-bottom: 2em;
+        }
+
+        .fix {
+            overflow: hidden;
+        }
+
+        .container_full {
+            width: 100%;
+        }
+
+        .container {
+            width: 1280px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .bg_color {
+            background: #292929;
+        }
+
+        .logo {
+            float: left;
+        }
+
+        .logo h2 {
+            font-family: lato;
+            color: white;
+            font-weight: bold;
+            font-size: 40px;
+            padding-top: 20px;
+        }
+
+        header nav {
+            float: right;
+        }
+
+        header nav .menu {
+            list-style: none;
+        }
+
+        header nav .menu li {
+            float: left;
+            border-right: 1px solid #1D1D1D;
+        }
+
+        header nav .menu li:first-child {
+            border-left: 1px solid #1D1D1D;
+        }
+
+        header nav .menu li a {
+            color: white;
+            font-family: lato;
+            font-weight: bold;
+            font-size: 16px;
+            display: block;
+            padding: 50px 30px;
+            border-bottom: 5px solid #1E1E1E;
+        }
+
+        header nav .menu li a:hover {
+            border-bottom: 5px solid #6DD053;
+            color: #6DD053;
+        }
+
+        header nav .menu li.active a {
+            border-bottom: 5px solid #6DD053;
+            color: #6DD053;
+        }
+    </style>
+    <link rel="stylesheet" href="../styles/footer.css" />
+    <script defer src="../app.js"></script>
+    <script
+      src="https://kit.fontawesome.com/c046d5c77d.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+     <!--section_1 logo and menu -->
+
+     <div class="container_full bg_color">
+        <div class="fix container">
+            <header>
+                <div class="logo">
+                    <h2>Hotel</h2>
+                </div>
+                <nav>
+                    <ul class="menu">
+                        <li><a href="/home">HOME</a></li>
+                        <li><a href="/room">ROOMS</a></li>
+                        <li><a href="/gallary">GALLARY</a></li>
+                        <li class="active"><a href="/about">ABOUT</a></li>
+                        <li><a href="/contact1">CONTACT US</a></li>
+                        <li><a href="/booknow">BOOK NOW</a></li>
+                        <li><a href="/login" class="user_icon">LOGIN <i class="fas fa-user-circle"></i></a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+    </div>
+    <!--section_2 slider part -->
+
+    <!-- About section -->
+    <section class="section--1 flex">
+      <h2 class="sec-1-hero-title">About Us</h2>
+
+      <div class="wrapper-container">
+        <div class="main--content grid">
+          <div class="section-col-1 col-1">
+            <h3 class="sec-1-title">Our History</h3>
+            <p class="sec-1-para">welcome to Hotel</p>
+            <p class="sec-1-big-para">
+              Lorem ipsum dolor sit Lorem, ipsum dolor sit amet consectetur
+              adipisicing elit. Fuga, et! amet consectetur adipisicing elit.
+              Doloribus molestiae doloremque iste distinctio, eos animi.
+            </p>
+            <p class="sec-1-big-para">
+              Lorem ipsum dolor sit Lorem, ipsum dolor sit amet consectetur
+              adipisicing elit. Fuga, et! amet consectetur adipisicing elit.
+              Doloribus molestiae doloremque iste distinctio, eos animi.
+            </p>
+            <p class="sec-1-big-para">
+              Lorem ipsum dolor sit Lorem, ipsum dolor sit amet consectetur
+              adipisicing elit. Fuga, et! amet consectetur adipisicing elit.
+              Doloribus molestiae doloremque iste distinctio, eos animi.
+            </p>
+          </div>
+          <div class="section-col-2 col-2">
+            <div class="first_img sec1img">
+              <img
+                src="http://unsplash.it/200/250?image=563"
+                alt=""
+                class="sec-1-image1 sec-1_img"
+              />
+            </div>
+
+            <div class="second_img sec1img">
+              <img
+                src="http://unsplash.it/200/250?image=566"
+                alt=""
+                class="sec-1-image2 sec-1_img"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer>
+        <ul>
+          <li class="icons-list">
+            <a href="#" class="links1">
+              <i class="fab fa-facebook"></i>
+            </a>
+            <a href="#" class="links2">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="links3">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        </ul>
+      </footer>
+    </section>
+    <!-- About section End -->
+  </body>
+</html>

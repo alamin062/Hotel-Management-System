@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+
+        body {
+            font-family: sans-serif, Arial !important;
+            -webkit-transition: all 0.5s ease;
+            transition: all 0.5s ease;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: normal;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            line-height: 150%;
+            margin-bottom: 2em;
+        }
+
+        .fix {
+            overflow: hidden;
+        }
+
+        .container_full {
+            width: 100%;
+        }
+
+        .container {
+            width: 1280px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .bg_color {
+            background: #292929;
+        }
+
+        .logo {
+            float: left;
+        }
+
+        .logo h2 {
+            font-family: lato;
+            color: white;
+            font-weight: bold;
+            font-size: 40px;
+            padding-top: 20px;
+        }
+
+        header nav {
+            float: right;
+        }
+
+        header nav .menu {
+            list-style: none;
+        }
+
+        header nav .menu li {
+            float: left;
+            border-right: 1px solid #1D1D1D;
+        }
+
+        header nav .menu li:first-child {
+            border-left: 1px solid #1D1D1D;
+        }
+
+        header nav .menu li a {
+            color: white;
+            font-family: lato;
+            font-weight: bold;
+            font-size: 16px;
+            display: block;
+            padding: 50px 30px;
+            border-bottom: 5px solid #1E1E1E;
+        }
+
+        header nav .menu li a:hover {
+            border-bottom: 5px solid #6DD053;
+            color: #6DD053;
+        }
+
+        header nav .menu li.active a {
+            border-bottom: 5px solid #6DD053;
+            color: #6DD053;
+        }
+
+        .content_wrapper {
+            border-right: 1px solid #E1E0E0;
+            border-left: 1px solid #E1E0E0;
+            overflow: hidden;
+            padding-top: 75px;
+        }
+
+        .slider_container img {
+            height: 600px;
+            width: 100%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .title_container h2 {
+            text-align: center;
+        }
+
+        .content_rooms {
+            display: flex;
+            width: 100%;
+            margin-right: auto;
+            margin-top: 50px;
+        }
+
+        .content_rooms .image_container {
+            height: 400px;
+            width: 400px;
+            position: relative;
+        }
+
+        .content_rooms .img1 {
+            margin-left: 0;
+            margin-right: 20px;
+        }
+
+        .content_rooms .img2 {
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        .content_rooms .img3 {
+            margin-left: 20px;
+            margin-right: 0;
+        }
+
+        .content_rooms .image_container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .our_services {
+            text-align: center;
+            display: block;
+        }
+
+        .services .service_container {
+            position: relative;
+            height: 400px;
+            width: 300px;
+            margin: 20px;
+        }
+
+        .services .service_container img {
+            height: 50px;
+            width: 50px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .services .service_container h3 {
+            text-align: center;
+            font: bold;
+        }
+
+        .services .service_container p {
+            text-align: center;
+        }
+
+        .services {
+            display: flex;
+
+        }
+
+        .bg_footer {
+            background: #D2D2D2;
+        }
+
+        footer {
+            text-align: center;
+            padding-top: 60px;
+            padding-bottom: 60px;
+            ;
+        }
+
+        footer h1 {
+            font-family: lato;
+            font-weight: bold;
+            font-size: 40px;
+            color: #292929;
+        }
+
+        footer p {
+            font-family: lato;
+            font-weight: regular;
+            font-size: 13px;
+            color: #a6a6a6;
+        }
+
+        footer .social_area ul {
+            list-style: none;
+        }
+
+        footer .social_area ul li {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        footer .social_area ul li.facebook a {
+            display: block;
+            height: 40px;
+            width: 40px;
+            background: url(images/facebook.png) no-repeat;
+        }
+
+        footer .social_area ul li.facebook:hover a {
+            display: block;
+            height: 40px;
+            width: 40px;
+            background: url(images/search_icon.png) no-repeat;
+        }
+        
+    </style>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+</head>
+
+<body>
+    <!--section_1 logo and menu -->
+
+    <div class="container_full bg_color">
+        <div class="fix container">
+            <header>
+                <div class="logo">
+                    <h2>Hotel</h2>
+                </div>
+                <nav>
+                    <ul class="menu">
+                        <li class="active"><a href="#">HOME</a></li>
+                        <li><a href="/room">ROOMS</a></li>
+                        <li><a href="/gallary">GALLARY</a></li>
+                        <li><a href="/about">ABOUT</a></li>
+                        <li><a href="/contact1">CONTACT US</a></li>
+                        <li><a href="/booknow">BOOK NOW</a></li>
+                        <li><a href="/login" class="user_icon">LOGIN <i class="fas fa-user-circle"></i></a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+    </div>
+    <!--section_2 slider part -->
+    <div class="fix container">
+        <div class="slider_container">
+            <script>
+                var i = 0;
+                var images = [];
+                var time = 3000;
+
+                images[0] = 'HomeImages/Room1.jpg';
+                images[1] = 'HomeImages/Room2.jpeg';
+                images[2] = 'HomeImages/Hotel_building1.jpg';
+                function changeImg() {
+                    document.slide.src = images[i];
+                    if (i < images.length - 1) {
+                        i++;
+                    }
+                    else {
+                        i = 0;
+                    }
+                    setTimeout("changeImg()", time);
+                }
+                window.onload = changeImg;
+            </script>
+            <img name="slide">
+        </div>
+    </div><br>
+    <!--section_3 few rooms container section-->
+    <div class="fix container">
+        <div class="title_container">
+            <h2>OUR ROOMS</h2>
+        </div>
+        <div class="content_rooms">
+            <div class="image_container img1"><img src="HomeImages/Room4.jfif" alt=""></div>
+            <div class="image_container img2"><img src="HomeImages/Room2.jpeg" alt=""></div>
+            <div class="image_container img3"><img src="HomeImages/Room1.jpg" alt=""></div>
+        </div>
+    </div><br>
+    <!--section_4 few sevices container section-->
+    <div class="fix container">
+        <div class="our_services">
+            <h2 class="service_header">OUR SERVICES</h2>
+        </div>
+        <div class="services">
+            <div class="service_container">
+                <img src="HomeImages/parking-solid.svg" alt="">
+                <h3>Free Parking</h3>
+                <p>
+
+                    Ut enim ad minim veniam, quis
+                    nostrud exercitation ullamco laboris
+                    nisi ut aliquipop ex ea commo
+                    doconsequat, sunt in culpa qui
+                    officia deserunt mollit anim id .
+
+                </p>
+            </div>
+            <div class="service_container">
+                <img src="HomeImages/utensils-solid.svg" alt="">
+                <h3>Restaurent</h3>
+                <p>
+                    <small>
+                        Ut enim ad minim veniam, quis
+                        nostrud exercitation ullamco laboris
+                        nisi ut aliquipop ex ea commo
+                        doconsequat, sunt in culpa qui
+                        officia deserunt mollit anim id .
+                    </small>
+                </p>
+            </div>
+            <div class="service_container">
+                <img src="HomeImages/dumbbell-solid.svg" alt="">
+                <h3>GYM</h3>
+                <p>
+
+                    Ut enim ad minim veniam, quis
+                    nostrud exercitation ullamco laboris
+                    nisi ut aliquipop ex ea commo
+                    doconsequat, sunt in culpa qui
+                    officia deserunt mollit anim id .
+
+                </p>
+            </div>
+            <div class="service_container">
+                <img src="HomeImages/spa-solid.svg" alt="">
+                <h3>SPA</h3>
+                <p>
+
+                    Ut enim ad minim veniam, quis
+                    nostrud exercitation ullamco laboris
+                    nisi ut aliquipop ex ea commo
+                    doconsequat, sunt in culpa qui
+                    officia deserunt mollit anim id .
+
+                </p>
+            </div>
+        </div>
+    </div>
+    <!--section_4 footer part -->
+
+    <div class="container_full bg_footer">
+        <div class="fix container">
+            <footer>
+                <h1>Hotel</h1>
+                <p>© 2014 Blogin.com - All Rights Reserved - Find more free Templates at Pixelhint.com</p>
+                <div class="social_area">
+                    <ul>
+                        <li class="facebook"><a href="#"></a></li>
+                        <li class="facebook"><a href="#"></a></li>
+                        <li class="facebook"><a href="#"></a></li>
+                        <li class="facebook"><a href="#"></a></li>
+                    </ul>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+</body>
+
+</html>

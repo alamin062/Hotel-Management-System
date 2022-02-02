@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: montserrat;
+            background: linear-gradient(120deg, #2980b9, #8e44ad);
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .form_container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 500px;
+            background: white;
+            border-radius: 10px;
+            padding-left: 50px;
+        }
+
+        .form_container h2 {
+            padding-top: 20px;
+            padding-left: 10px;
+            font: bold;
+        }
+
+        .form_container form {
+            box-sizing: border-box;
+
+        }
+
+        .form_container input {
+            border: none;
+            background-color: #E2E2E2;
+            padding: 15px;
+            margin: 10px;
+            width: 380px;
+            border-radius: 5px;
+        }
+
+        .form_container label {
+            margin-left: 10px;
+        }
+
+        .btn {
+            width: 250px;
+            padding: 15px;
+            margin-top: 25px;
+            margin-bottom: 80px;
+            background-color: #18A0FB;
+            border: none;
+            border-radius: 20px;
+            margin-left: 90px;
+            color: white;
+            font: bold;
+            font-size: large;
+        }
+
+        .form_container .textBox {
+            border: none;
+            background-color: #E2E2E2;
+            padding: 15px;
+            margin: 10px;
+            width: 380px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form_container">
+        <div class="title_container">
+            <h2>Contract Us</h2>
+        </div>
+        <div>
+            <form action="/contact" method="post" id="/contact">
+                <label for="">Full Name</label><br>
+                <input type="text" placeholder="  Enter your full name" name="name"><br><br>
+                <label for="">Email</label><br>
+                <input type="text" placeholder="  Enter your email" name="email"><br><br>
+                <label for="">Phone Number</label><br>
+                <input type="text" placeholder="  Enter your phone number" name="phone"><br><br>
+                <label for="">Massage</label><br>
+                <textarea placeholder="Type something" name="massage" class="textBox" id="" cols="50"
+                    rows="5"></textarea>
+                <button class="btn" type="submit">Send Massage</button><br>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

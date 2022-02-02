@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-family: sans-serif;
+            /* Change your font family */
+        }
+
+        .content-table {
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 0.9em;
+            min-width: 1000px;
+            border-radius: 5px 5px 0 0;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .content-table thead tr {
+            background-color: #009879;
+            color: #ffffff;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        .content-table th,
+        .content-table td {
+            padding: 12px 15px;
+        }
+
+        .content-table tbody tr {
+            border-bottom: 1px solid #dddddd;
+        }
+
+        .content-table tbody tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+        }
+
+        .content-table tbody tr:last-of-type {
+            border-bottom: 2px solid #009879;
+        }
+
+        .content-table tbody tr.active-row {
+            font-weight: bold;
+            color: #009879;
+        }
+        * {
+            margin: 0;
+            padding: 0
+        }
+
+        body {
+            font-family: sans-serif, Arial !important;
+            -webkit-transition: all 0.5s ease;
+            transition: all 0.5s ease;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: normal;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            line-height: 150%;
+            margin-bottom: 2em;
+        }
+
+        .fix {
+            overflow: hidden;
+        }
+
+        .container_full {
+            width: 100%;
+        }
+
+        .container {
+            width: 1280px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .bg_color {
+            background: #292929;
+        }
+
+        .logo {
+            float: left;
+        }
+
+        .logo h2 {
+            font-family: lato;
+            color: white;
+            font-weight: bold;
+            font-size: 40px;
+            padding-top: 20px;
+        }
+
+        header nav {
+            float: right;
+        }
+
+        header nav .menu {
+            list-style: none;
+        }
+
+        header nav .menu li {
+            float: left;
+            border-right: 1px solid #1D1D1D;
+        }
+
+        header nav .menu li:first-child {
+            border-left: 1px solid #1D1D1D;
+        }
+
+        header nav .menu li a {
+            color: white;
+            font-family: lato;
+            font-weight: bold;
+            font-size: 16px;
+            display: block;
+            padding: 50px 30px;
+            border-bottom: 5px solid #1E1E1E;
+        }
+
+        header nav .menu li a:hover {
+            border-bottom: 5px solid #6DD053;
+            color: #6DD053;
+        }
+
+        header nav .menu li.active a {
+            border-bottom: 5px solid #6DD053;
+            color: #6DD053;
+        }
+        .table_container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .table_container .content-table button{
+            padding: 7px;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div class="container_full bg_color">
+        <div class="fix container">
+            <header>
+                <div class="logo"><h2>Admin Dashboard</h2></div>
+                <nav>
+                    <ul class="menu">
+                        <li class="active"><a href="#">Massages</a></li>
+                        <li><a href="/customer">Customeres Info</a></li>
+                        <li><a href="/employee">Employees Info</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+    </div>
+    <div class="table_container">
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th>Sender Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Massage</th>
+                    <th>Delete Massage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% data.forEach((item)=>{ %>
+                    <tr>
+                        <td>
+                            <%= item.name %>
+                        </td>
+                        <td>
+                            <%= item.email %>
+                        </td>
+                        <td>
+                            <%= item.phone %>
+                        </td>
+                        <td>
+                            <form action="/massage/<%= item._id%>" method="get"><button>See Massage..</button></form>
+                        </td>
+                        <td>
+                            <form action="/deleteMassage/<%= item._id%>" method="get"><button>delete</button></form>
+                        </td>
+                    </tr>
+                    <% })%>
+            </tbody>
+        </table>
+    </div>
+    
+</body>
+
+</html>

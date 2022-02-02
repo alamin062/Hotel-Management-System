@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../styles/contactInfo.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            /* background-color: #556ffa; */
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .body {
+            background: linear-gradient(to right, #ee6666, #1e8f76);
+            padding: 2rem 0rem;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .input_area {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .form_section_flex {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .area_definer {
+            max-width: 1140px;
+            min-width: 1000px;
+            width: 90%;
+        }
+
+        .flex {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            /* justify-content: space-between; */
+            justify-content: center;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .flex_input {
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+        }
+
+        .flex_info {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .flex_input input,
+        select {
+            width: 250px;
+            background: transparent;
+            border: none;
+            outline: 2px solid rgb(63, 177, 139);
+            padding: 0.5rem 2rem;
+        }
+
+        .flex_input label {
+            margin-block-end: 0.25rem;
+            margin-block-start: 0.25rem;
+            text-transform: capitalize;
+        }
+
+        .contact_info {
+            /* background-color: #fff; */
+            background: hsl(0 0% 100% / 0.3);
+            backdrop-filter: blur(1rem);
+            margin-block: 0.25rem;
+            padding: 1rem;
+        }
+
+        ::placeholder {
+            padding: 0.5rem;
+            color: black;
+            text-transform: capitalize;
+        }
+
+        .form_info {
+            background: rgb(69, 236, 153);
+            width: 100%;
+            max-width: 40rem;
+
+            border-radius: 1rem;
+            /* position: relative; */
+        }
+
+        .form_section {
+            /* border: 2px solid rgb(216, 226, 70); */
+            max-width: 90rem;
+            /* width: 60%; */
+            border-radius: 1rem;
+            width: 100%;
+            padding: 2rem 2em;
+            background-color: rgb(69, 236, 153);
+        }
+
+        .image_container {
+            width: 100%;
+            height: 10rem;
+            /* height: 10%; */
+            /* border: 2px solid yellow; */
+        }
+
+        #checkin,
+        #checkout {
+            padding: unset;
+        }
+
+        .image {
+            height: 100%;
+            /* position: absolute; */
+            width: 100%;
+            object-fit: cover;
+            border-start-start-radius: 1rem;
+            border-start-end-radius: 1rem;
+        }
+
+        /* !! Button styling */
+        .btn {
+            border: none;
+            outline: none;
+            text-transform: uppercase;
+            padding: 0.5rem 2.5rem;
+            border-radius: 2rem;
+            background-color: #fff;
+            transition: all 300ms ease-in;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        :is(.btn):hover,
+        :focus {
+            background-color: rgb(216, 216, 216);
+        }
+
+        .button_container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 0rem;
+            margin-block-start: 1rem;
+        }
+
+        .contact_text {
+            text-align: center;
+            margin: 2rem;
+        }
+
+        #gender {
+            padding-left: 1rem;
+        }
+
+        @media (min-width: 47rem) {
+            .body {
+                background: linear-gradient(to right,
+                        rgba(241, 188, 188, 0.4),
+                        rgba(212, 143, 143, 0.3)),
+                    url(http://unsplash.it/1980/1000?image=569) center top;
+            }
+
+            .flex {
+                flex-direction: row;
+                /* justify-content: center; */
+            }
+
+            .input_area {
+                display: flex;
+                justify-content: space-between;
+                gap: 1rem;
+                margin-bottom: 1rem;
+            }
+
+            #checkin,
+            #checkout {
+                padding: 0.5rem 0.5rem;
+            }
+
+            .flex_info select {
+                /* width: 100%; */
+            }
+
+            .flex_input input,
+            select {
+                /* padding: 0.5rem clamp(0.5rem, 5vw, 2rem); */
+            }
+
+            .form_section {
+                padding: unset;
+                width: 60%;
+                padding: 2rem;
+            }
+
+            .area_definer {}
+
+            .form_info {
+                width: 45%;
+            }
+
+            .flex_input label {
+                margin-block-end: 0.25rem;
+                margin-block-start: 0rem;
+            }
+        }
+    </style>
+</head>
+
+<body class="body">
+    <section class="form_section_flex">
+        <div class="area_definer">
+            <div class="form_container flex">
+                <form action="/form/<%= data._id %>" class="form_section" method="post">
+                    <input type="hidden" value="<%= data._id %>" name="room_id">
+                    <div class="input_area">
+                        <div class="left_col flex_input">
+                            <label for="name">Full Name</label>
+                            <input type="text" name="name" id="fullName" placeholder="enter your full name" />
+                        </div>
+                        <div class="left_col flex_input">
+                            <label for="fullName">address</label>
+                            <input type="text" name="address" id="fullName" placeholder="enter your full name" />
+                        </div>
+                    </div>
+                    <div class="input_area">
+                        <div class="left_col flex_input">
+                            <label for="email">Room type</label>
+                            <input type="text" value="<%= data.name %>" name="room_type" id="email" placeholder="enter your email" />
+                        </div>
+                        <div class="right_col flex_input">
+                            <label for="phone">Cost per room</label>
+                            <input type="text" name="price" value="<%= data.price %>" id="phone" />
+                        </div>
+                    </div>
+                    <div class="input_area">
+                        <div class="left_col flex_input">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" id="email" placeholder="enter your email" />
+                        </div>
+                        <div class="right_col flex_input">
+                            <label for="phone">Phone</label>
+                            <input type="phone" name="phone" id="phone" placeholder="enter your phone" />
+                        </div>
+                    </div>
+                    <div class="input_area">
+                        <div class="left_col flex_input">
+                            <label for="noofguest">No of Guest</label>
+                            <input type="number" name="guest" id="noofguest" placeholder="enter no of gurst" />
+                        </div>
+                        <div class="right_col flex_input">
+                            <label for="night">No of Nights</label>
+                            <input type="number" name="night" id="noofnights" placeholder="enter no of nights" />
+                        </div>
+                    </div>
+                    <div class="input_area">
+                        <div class="left_col flex_input">
+                            <label for="checkin">Check in</label>
+                            <input type="date" name="cheakin" id="checkin" placeholder="enter entry date" />
+                        </div>
+                        <div class="right_col flex_input">
+                            <label for="checkout">Check out</label>
+                            <input type="date" name="cheakout" id="checkout" placeholder="enter dispatch date" />
+                        </div>
+                    </div>
+                    <div class="button_container">
+                        <a href="/form"><button class="btn">Submit</button></a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

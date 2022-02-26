@@ -193,6 +193,7 @@ class BackEndController {
          console.log(err);
       }
    };
+
    static getPayment = async (req, res) => {
       try {
          const result = await Customer.findById(req.params.id);
@@ -203,8 +204,11 @@ class BackEndController {
    };
 
    static postPayment = async (req, res) => {
+      console.log(req.params.id);
       res.redirect("/payment/" + req.params.id);
    };
+
+
    static getCheakout = async (req, res) => {
       try {
          const result = await Customer.find();
@@ -292,9 +296,6 @@ class BackEndController {
         console.log(err);
      }
   }; */
-
-
-
 }
 
 module.exports = BackEndController;
